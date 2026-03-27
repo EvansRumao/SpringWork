@@ -6,38 +6,6 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.Date;
-//
-//@Entity
-//@Data
-//@Table(name = "product")
-//public class Product {
-//
-//   @Id
-//   @GeneratedValue(strategy = GenerationType.IDENTITY)
-//   private int proId;
-//
-//   @Column(name = "pro_name")
-//   private String pro_name;
-//
-//   @Column(name = "pro_desc")
-//   private String proDesc;
-//
-//   private String brand;
-//
-//   private BigDecimal price;
-//
-//   private String category;
-//
-//   @Column(name = "release_date")
-//   private Date releaseDate;
-//
-//   @Column(name = "product_available")
-//   private Boolean productAvailable;
-//
-//   private int quantity;
-//}
-
-
 
 @Entity
 @Table(name = "product")
@@ -82,7 +50,7 @@ public class Product {
    private BigDecimal price;
    private String category;
 
-   @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
+//   @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
    @Column(name = "release_date")
    private Date releaseDate;
 

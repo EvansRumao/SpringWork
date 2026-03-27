@@ -4,6 +4,7 @@ import com.Ecomerce.Website.model.Product;
 import com.Ecomerce.Website.repo.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -29,5 +30,17 @@ public class ProductService {
         pro.setImageName(image.getOriginalFilename());
 
         return repo.save(pro);
+    }
+
+    public Product updateProduct(Product pro, MultipartFile imageFile) throws  IOException {
+        pro.setImageData(imageFile.getBytes());
+        pro.setImageType(imageFile.getContentType());
+        pro.setImageName(imageFile.getOriginalFilename());
+
+        return repo.save(pro);
+    }
+
+    public void DeleteProduct(int id) {
+        repo.deleteById(id);
     }
 }
