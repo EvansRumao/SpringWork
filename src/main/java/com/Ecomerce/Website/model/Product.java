@@ -2,7 +2,6 @@ package com.Ecomerce.Website.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.Date;
