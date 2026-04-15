@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
-
+import com.Project.JobApp.model.JobPost;
 import java.util.List;
 
 @Controller
@@ -34,8 +36,16 @@ public class jobController {
     }
 
     @PostMapping("/handleForm")
-    public ModelAndView handleForm(JobPost jobPost) {
+    public ModelAndView handleForm(@ModelAttribute JobPost jobPost) {
         service.addJob(jobPost);
         return new ModelAndView("success", "jobPost", jobPost);
     }
+
+    @GetMapping("/getJob/{i}")
+    public String getJob(@PathVariable int i) {
+        return "getJob";
+    }
+
+
+
 }

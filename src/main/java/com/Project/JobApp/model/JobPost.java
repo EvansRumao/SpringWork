@@ -1,16 +1,19 @@
-package com.Project.JobApp;
+package com.Project.JobApp.model;
+
+import jakarta.persistence.Id;
 
 import java.util.List;
 
 public class JobPost {
 
+    @Id
     private int postId;
     private String postProfile;
     private String postDesc;
     private int reqExperience;
     private List<String> postTechStack;
 
-    // ✅ FIXED constructor
+    //  FIXED constructor
     public JobPost(int postId, String postProfile, String postDesc, int reqExperience, List<String> postTechStack) {
         this.postId = postId;
         this.postProfile = postProfile;
@@ -19,7 +22,7 @@ public class JobPost {
         this.postTechStack = postTechStack;
     }
 
-    // ✅ Default constructor (IMPORTANT for Spring)
+    //  Default constructor (IMPORTANT for Spring)
     public JobPost() {}
 
     public int getPostId() { return postId; }
